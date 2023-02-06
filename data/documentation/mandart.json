@@ -1,1 +1,53 @@
-{"variants":[{"paths":["\/documentation\/mandart"],"traits":[{"interfaceLanguage":"swift"}]}],"schemaVersion":{"major":0,"minor":3,"patch":0},"sections":[],"identifier":{"url":"doc:\/\/MandArt\/documentation\/MandArt","interfaceLanguage":"swift"},"kind":"symbol","metadata":{"roleHeading":"Framework","externalID":"MandArt","title":"MandArt","symbolKind":"module","role":"collection","modules":[{"name":"MandArt"}]},"hierarchy":{"paths":[[]]},"references":{"doc://MandArt/documentation/MandArt":{"role":"collection","title":"MandArt","abstract":[],"identifier":"doc:\/\/MandArt\/documentation\/MandArt","kind":"symbol","type":"topic","url":"\/documentation\/mandart"}}}
+{
+    "variants": [
+        {
+            "paths": [
+                "\/documentation\/mandart"
+            ],
+            "traits": [
+                {
+                    "interfaceLanguage": "swift"
+                }
+            ]
+        }
+    ],
+    "schemaVersion": {
+        "major": 0,
+        "minor": 3,
+        "patch": 0
+    },
+    "sections": [],
+    "identifier": {
+        "url": "doc:\/\/MandArt\/documentation\/MandArt",
+        "interfaceLanguage": "swift"
+    },
+    "kind": "symbol",
+    "metadata": {
+        "roleHeading": "Framework",
+        "externalID": "MandArt",
+        "title": "MandArt",
+        "symbolKind": "module",
+        "role": "collection",
+        "modules": [
+            {
+                "name": "MandArt"
+            }
+        ]
+    },
+    "hierarchy": {
+        "paths": [
+            []
+        ]
+    },
+    "references": {
+        "doc://MandArt/documentation/MandArt": {
+            "role": "collection",
+            "title": "MandArt",
+            "abstract": [],
+            "identifier": "doc:\/\/MandArt\/documentation\/MandArt",
+            "kind": "symbol",
+            "type": "topic",
+            "url": "\/documentation\/mandart"
+        }
+    }
+}
