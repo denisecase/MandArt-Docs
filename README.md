@@ -3,7 +3,7 @@
 Documentation for MandArt
 
 - [MandArt](https://github.com/denisecase/MandArt)
-- [Documentation](denisecase.github.io/MandArt-Docs/documentation/mandart/)
+- [Documentation](https://denisecase.github.io/MandArt-Docs/documentation/mandart/)
 
 
 ## Documentation Generation
