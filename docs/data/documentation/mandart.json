@@ -134,20 +134,6 @@
             "type": "topic",
             "url": "\/documentation\/mandart"
         },
-        "doc://MandArt/documentation/MandArt/A04-MoreAboutTheMath": {
-            "role": "collectionGroup",
-            "title": "More About The Math",
-            "abstract": [
-                {
-                    "type": "text",
-                    "text": "MandArt is based on a popular fractal, the Mandlebrot set."
-                }
-            ],
-            "identifier": "doc:\/\/MandArt\/documentation\/MandArt\/A04-MoreAboutTheMath",
-            "kind": "article",
-            "type": "topic",
-            "url": "\/documentation\/mandart\/a04-moreaboutthemath"
-        },
         "doc://MandArt/documentation/MandArt/A02-SettingInputs": {
             "role": "article",
             "title": "Setting Inputs",
@@ -163,7 +149,7 @@
             "url": "\/documentation\/mandart\/a02-settinginputs"
         },
         "doc://MandArt/documentation/MandArt/A03-Challenges": {
-            "role": "collectionGroup",
+            "role": "article",
             "title": "Challenges",
             "abstract": [
                 {
@@ -191,7 +177,7 @@
             ]
         },
         "doc://MandArt/documentation/MandArt/A01-GettingStarted": {
-            "role": "collectionGroup",
+            "role": "article",
             "title": "Getting Started",
             "abstract": [
                 {
@@ -203,6 +189,20 @@
             "kind": "article",
             "type": "topic",
             "url": "\/documentation\/mandart\/a01-gettingstarted"
+        },
+        "doc://MandArt/documentation/MandArt/A04-MoreAboutTheMath": {
+            "role": "article",
+            "title": "More About The Math",
+            "abstract": [
+                {
+                    "type": "text",
+                    "text": "MandArt is based on a popular fractal, the Mandlebrot set."
+                }
+            ],
+            "identifier": "doc:\/\/MandArt\/documentation\/MandArt\/A04-MoreAboutTheMath",
+            "kind": "article",
+            "type": "topic",
+            "url": "\/documentation\/mandart\/a04-moreaboutthemath"
         }
     }
 }

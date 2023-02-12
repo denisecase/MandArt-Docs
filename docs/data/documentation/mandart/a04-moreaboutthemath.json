@@ -26,6 +26,129 @@
                             "identifier": "mandart_a04.png"
                         }
                     ]
+                },
+                {
+                    "anchor": "Discussion",
+                    "level": 2,
+                    "type": "heading",
+                    "text": "Discussion"
+                },
+                {
+                    "anchor": "The-Mandelbrot-Set",
+                    "level": 3,
+                    "type": "heading",
+                    "text": "The Mandelbrot Set"
+                },
+                {
+                    "type": "paragraph",
+                    "inlineContent": [
+                        {
+                            "type": "text",
+                            "text": "Now for a little math to help explain what’s going on."
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "inlineContent": [
+                        {
+                            "type": "text",
+                            "text": "How are these pictures generated? We start with an iterative formula:"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "inlineContent": [
+                        {
+                            "type": "text",
+                            "text": "zn + 1 = zn2 + c"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "inlineContent": [
+                        {
+                            "type": "text",
+                            "text": "where z and c are complex numbers. z = x + iy and c = x0 + iy0."
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "inlineContent": [
+                        {
+                            "type": "text",
+                            "text": "Since our computers don’t work with complex numbers, and they seem a little scary, we use a little math to get to real numbers."
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "inlineContent": [
+                        {
+                            "type": "text",
+                            "text": "All we really have to know is that i2 = -1 and that an i in front of a number means it is measured along the y axis of the standard x-y plane."
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "inlineContent": [
+                        {
+                            "type": "text",
+                            "text": "The initial value of zn is 0 + i0. The values of x0 and y0 remain fixed while we iterate."
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "inlineContent": [
+                        {
+                            "type": "text",
+                            "text": "That’s just part of the definition of the Mandelbrot set."
+                        }
+                    ]
+                },
+                {
+                    "anchor": "The-Mandelbrot-set",
+                    "level": 3,
+                    "type": "heading",
+                    "text": "The Mandelbrot set"
+                },
+                {
+                    "type": "paragraph",
+                    "inlineContent": [
+                        {
+                            "type": "text",
+                            "text": "The Mandelbrot set is a mathematical formula."
+                        },
+                        {
+                            "type": "text",
+                            "text": " "
+                        },
+                        {
+                            "type": "text",
+                            "text": "It is a complex function that generates a set of complex numbers based on the iteration of a simple equation."
+                        },
+                        {
+                            "type": "text",
+                            "text": " "
+                        },
+                        {
+                            "type": "text",
+                            "text": "The equation is used to generate the points in the complex plane that are part of the Mandelbrot set."
+                        },
+                        {
+                            "type": "text",
+                            "text": " "
+                        },
+                        {
+                            "type": "text",
+                            "text": "The set is named after the French mathematician Benoît B. Mandelbrot, who studied and popularized it in the late 20th century."
+                        }
+                    ]
                 }
             ]
         }
@@ -62,7 +185,7 @@
     "metadata": {
         "roleHeading": "Article",
         "title": "More About The Math",
-        "role": "collectionGroup",
+        "role": "article",
         "modules": [
             {
                 "name": "MandArt"
@@ -77,20 +200,6 @@
         ]
     },
     "references": {
-        "mandart_a04.png": {
-            "alt": "Example",
-            "type": "image",
-            "identifier": "mandart_a04.png",
-            "variants": [
-                {
-                    "url": "\/images\/mandart_a04.png",
-                    "traits": [
-                        "1x",
-                        "light"
-                    ]
-                }
-            ]
-        },
         "doc://MandArt/documentation/MandArt": {
             "role": "collection",
             "title": "MandArt",
@@ -104,6 +213,20 @@
             "kind": "symbol",
             "type": "topic",
             "url": "\/documentation\/mandart"
+        },
+        "mandart_a04.png": {
+            "alt": "Example",
+            "type": "image",
+            "identifier": "mandart_a04.png",
+            "variants": [
+                {
+                    "url": "\/images\/mandart_a04.png",
+                    "traits": [
+                        "1x",
+                        "light"
+                    ]
+                }
+            ]
         }
     }
 }

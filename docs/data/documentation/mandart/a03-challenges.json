@@ -26,6 +26,52 @@
                             "identifier": "mandart_a03.png"
                         }
                     ]
+                },
+                {
+                    "anchor": "Discussion",
+                    "level": 2,
+                    "type": "heading",
+                    "text": "Discussion"
+                },
+                {
+                    "anchor": "Printing-Colors",
+                    "level": 3,
+                    "type": "heading",
+                    "text": "Printing Colors"
+                },
+                {
+                    "type": "paragraph",
+                    "inlineContent": [
+                        {
+                            "type": "text",
+                            "text": "This app was designed to make a frameable picture."
+                        },
+                        {
+                            "type": "text",
+                            "text": " "
+                        },
+                        {
+                            "type": "text",
+                            "text": "Unfortunately, printers can’t reproduce the range of colors available on the screen."
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "inlineContent": [
+                        {
+                            "type": "text",
+                            "text": "So, a set of 292 colors that should print well is available by hitting Show Print Colors."
+                        },
+                        {
+                            "type": "text",
+                            "text": " "
+                        },
+                        {
+                            "type": "text",
+                            "text": "The format is the same as for the screen colors, so it is obvious that many of the best colors are missing."
+                        }
+                    ]
                 }
             ]
         }
@@ -62,7 +108,7 @@
     "metadata": {
         "roleHeading": "Article",
         "title": "Challenges",
-        "role": "collectionGroup",
+        "role": "article",
         "modules": [
             {
                 "name": "MandArt"
