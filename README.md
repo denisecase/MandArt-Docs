@@ -35,3 +35,4 @@ References:
 - <https://rhonabwy.com/2022/01/28/hosting-your-swift-library-docs-on-github-pages/>
 - [Generating Documentation for Hosting Online](https://apple.github.io/swift-docc-plugin/documentation/swiftdoccplugin/generating-documentation-for-hosting-online/)
 - [Publishing to Github Pages](https://apple.github.io/swift-docc-plugin/documentation/swiftdoccplugin/publishing-to-github-pages/)
+- [Customizing the look and feel of Swift-DocC-Render](https://forums.swift.org/t/customizing-the-look-and-feel-of-swift-docc-render/58858/1)
