@@ -22,7 +22,7 @@
                         },
                         {
                             "type": "text",
-                            "text": "The resulting images are suitable for printing on online use."
+                            "text": "The resulting images are suitable for printing or online use."
                         }
                     ]
                 },
@@ -31,7 +31,7 @@
                     "inlineContent": [
                         {
                             "type": "text",
-                            "text": "Check out the articles below - or try out a tutorial to get started."
+                            "text": "Check out the articles below - or try a tutorial to get started."
                         }
                     ]
                 },
@@ -120,20 +120,6 @@
         }
     ],
     "references": {
-        "doc://MandArt/documentation/MandArt/A02-SettingInputs": {
-            "role": "article",
-            "title": "Setting Inputs",
-            "abstract": [
-                {
-                    "type": "text",
-                    "text": "Setting MandArt inputs to generate custom art."
-                }
-            ],
-            "identifier": "doc:\/\/MandArt\/documentation\/MandArt\/A02-SettingInputs",
-            "kind": "article",
-            "type": "topic",
-            "url": "\/documentation\/mandart\/a02-settinginputs"
-        },
         "doc://MandArt/documentation/MandArt/A01-GettingStarted": {
             "role": "article",
             "title": "Getting Started",
@@ -147,20 +133,6 @@
             "kind": "article",
             "type": "topic",
             "url": "\/documentation\/mandart\/a01-gettingstarted"
-        },
-        "doc://MandArt/documentation/MandArt": {
-            "role": "collection",
-            "title": "MandArt",
-            "abstract": [
-                {
-                    "type": "text",
-                    "text": "Create custom art from the Mandelbrot set."
-                }
-            ],
-            "identifier": "doc:\/\/MandArt\/documentation\/MandArt",
-            "kind": "symbol",
-            "type": "topic",
-            "url": "\/documentation\/mandart"
         },
         "mandart.png": {
             "alt": "Example",
@@ -176,6 +148,20 @@
                 }
             ]
         },
+        "doc://MandArt/documentation/MandArt/A02-SettingInputs": {
+            "role": "article",
+            "title": "Setting Inputs",
+            "abstract": [
+                {
+                    "type": "text",
+                    "text": "Setting MandArt inputs to generate custom art."
+                }
+            ],
+            "identifier": "doc:\/\/MandArt\/documentation\/MandArt\/A02-SettingInputs",
+            "kind": "article",
+            "type": "topic",
+            "url": "\/documentation\/mandart\/a02-settinginputs"
+        },
         "doc://MandArt/documentation/MandArt/A03-Challenges": {
             "role": "article",
             "title": "Challenges",
@@ -189,6 +175,20 @@
             "kind": "article",
             "type": "topic",
             "url": "\/documentation\/mandart\/a03-challenges"
+        },
+        "doc://MandArt/documentation/MandArt": {
+            "role": "collection",
+            "title": "MandArt",
+            "abstract": [
+                {
+                    "type": "text",
+                    "text": "Create custom art from the Mandelbrot set."
+                }
+            ],
+            "identifier": "doc:\/\/MandArt\/documentation\/MandArt",
+            "kind": "symbol",
+            "type": "topic",
+            "url": "\/documentation\/mandart"
         },
         "doc://MandArt/documentation/MandArt/A04-MoreAboutTheMath": {
             "role": "article",

@@ -3,10 +3,10 @@
         {
             "alt": "Example",
             "type": "image",
-            "identifier": "mandart_a03.png",
+            "identifier": "mandart_a01.png",
             "variants": [
                 {
-                    "url": "\/images\/mandart_a03.png",
+                    "url": "\/images\/mandart_a01.png",
                     "traits": [
                         "1x",
                         "light"
@@ -17,10 +17,10 @@
         {
             "alt": "Example",
             "type": "image",
-            "identifier": "mandart.png",
+            "identifier": "mandart_a03.png",
             "variants": [
                 {
-                    "url": "\/images\/mandart.png",
+                    "url": "\/images\/mandart_a03.png",
                     "traits": [
                         "1x",
                         "light"
@@ -45,52 +45,10 @@
         {
             "alt": "Example",
             "type": "image",
-            "identifier": "mandart_a01.png",
+            "identifier": "mandart.png",
             "variants": [
                 {
-                    "url": "\/images\/mandart_a01.png",
-                    "traits": [
-                        "1x",
-                        "light"
-                    ]
-                }
-            ]
-        },
-        {
-            "alt": "Example",
-            "type": "image",
-            "identifier": "mandart_a02.png",
-            "variants": [
-                {
-                    "url": "\/images\/mandart_a02.png",
-                    "traits": [
-                        "1x",
-                        "light"
-                    ]
-                }
-            ]
-        },
-        {
-            "alt": "Fig 1",
-            "type": "image",
-            "identifier": "Picture1.png",
-            "variants": [
-                {
-                    "url": "\/images\/Picture1.png",
-                    "traits": [
-                        "1x",
-                        "light"
-                    ]
-                }
-            ]
-        },
-        {
-            "alt": "Fig 4",
-            "type": "image",
-            "identifier": "Picture4.png",
-            "variants": [
-                {
-                    "url": "\/images\/Picture4.png",
+                    "url": "\/images\/mandart.png",
                     "traits": [
                         "1x",
                         "light"
@@ -147,6 +105,48 @@
             "variants": [
                 {
                     "url": "\/images\/Picture3.png",
+                    "traits": [
+                        "1x",
+                        "light"
+                    ]
+                }
+            ]
+        },
+        {
+            "alt": "Fig 1",
+            "type": "image",
+            "identifier": "Picture1.png",
+            "variants": [
+                {
+                    "url": "\/images\/Picture1.png",
+                    "traits": [
+                        "1x",
+                        "light"
+                    ]
+                }
+            ]
+        },
+        {
+            "alt": "Example",
+            "type": "image",
+            "identifier": "mandart_a02.png",
+            "variants": [
+                {
+                    "url": "\/images\/mandart_a02.png",
+                    "traits": [
+                        "1x",
+                        "light"
+                    ]
+                }
+            ]
+        },
+        {
+            "alt": "Fig 4",
+            "type": "image",
+            "identifier": "Picture4.png",
+            "variants": [
+                {
+                    "url": "\/images\/Picture4.png",
                     "traits": [
                         "1x",
                         "light"
