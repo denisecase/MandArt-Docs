@@ -1,5 +1,22 @@
 [
     {
+        "title": "Challenges",
+        "referenceURL": "doc:\/\/MandArt\/documentation\/MandArt\/A03-Challenges",
+        "language": "swift",
+        "abstract": [
+            {
+                "type": "text",
+                "text": "Working with colors presents some challenges."
+            }
+        ],
+        "path": "\/documentation\/mandart\/a03-challenges",
+        "kind": "org.swift.docc.kind.article",
+        "availableLanguages": [
+            "swift"
+        ],
+        "taskGroups": []
+    },
+    {
         "usr": "MandArt",
         "title": "MandArt",
         "referenceURL": "doc:\/\/MandArt\/documentation\/MandArt",
@@ -43,33 +60,16 @@
         ]
     },
     {
-        "title": "Setting Inputs",
-        "referenceURL": "doc:\/\/MandArt\/documentation\/MandArt\/A02-SettingInputs",
+        "title": "More About The Math",
+        "referenceURL": "doc:\/\/MandArt\/documentation\/MandArt\/A04-MoreAboutTheMath",
         "language": "swift",
         "abstract": [
             {
                 "type": "text",
-                "text": "Setting MandArt inputs to generate custom art."
+                "text": "MandArt is based on a popular fractal, the Mandlebrot set."
             }
         ],
-        "path": "\/documentation\/mandart\/a02-settinginputs",
-        "kind": "org.swift.docc.kind.article",
-        "availableLanguages": [
-            "swift"
-        ],
-        "taskGroups": []
-    },
-    {
-        "title": "Challenges",
-        "referenceURL": "doc:\/\/MandArt\/documentation\/MandArt\/A03-Challenges",
-        "language": "swift",
-        "abstract": [
-            {
-                "type": "text",
-                "text": "Working with colors presents some challenges."
-            }
-        ],
-        "path": "\/documentation\/mandart\/a03-challenges",
+        "path": "\/documentation\/mandart\/a04-moreaboutthemath",
         "kind": "org.swift.docc.kind.article",
         "availableLanguages": [
             "swift"
@@ -94,16 +94,16 @@
         "taskGroups": []
     },
     {
-        "title": "More About The Math",
-        "referenceURL": "doc:\/\/MandArt\/documentation\/MandArt\/A04-MoreAboutTheMath",
+        "title": "Setting Inputs",
+        "referenceURL": "doc:\/\/MandArt\/documentation\/MandArt\/A02-SettingInputs",
         "language": "swift",
         "abstract": [
             {
                 "type": "text",
-                "text": "MandArt is based on a popular fractal, the Mandlebrot set."
+                "text": "Setting MandArt inputs to generate custom art."
             }
         ],
-        "path": "\/documentation\/mandart\/a04-moreaboutthemath",
+        "path": "\/documentation\/mandart\/a02-settinginputs",
         "kind": "org.swift.docc.kind.article",
         "availableLanguages": [
             "swift"

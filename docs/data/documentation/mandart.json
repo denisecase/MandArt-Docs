@@ -120,20 +120,6 @@
         }
     ],
     "references": {
-        "doc://MandArt/documentation/MandArt": {
-            "role": "collection",
-            "title": "MandArt",
-            "abstract": [
-                {
-                    "type": "text",
-                    "text": "Create custom art from the Mandelbrot set."
-                }
-            ],
-            "identifier": "doc:\/\/MandArt\/documentation\/MandArt",
-            "kind": "symbol",
-            "type": "topic",
-            "url": "\/documentation\/mandart"
-        },
         "doc://MandArt/documentation/MandArt/A02-SettingInputs": {
             "role": "article",
             "title": "Setting Inputs",
@@ -148,19 +134,33 @@
             "type": "topic",
             "url": "\/documentation\/mandart\/a02-settinginputs"
         },
-        "doc://MandArt/documentation/MandArt/A03-Challenges": {
+        "doc://MandArt/documentation/MandArt/A01-GettingStarted": {
             "role": "article",
-            "title": "Challenges",
+            "title": "Getting Started",
             "abstract": [
                 {
                     "type": "text",
-                    "text": "Working with colors presents some challenges."
+                    "text": "How to get started using MandArt to generate custom art."
                 }
             ],
-            "identifier": "doc:\/\/MandArt\/documentation\/MandArt\/A03-Challenges",
+            "identifier": "doc:\/\/MandArt\/documentation\/MandArt\/A01-GettingStarted",
             "kind": "article",
             "type": "topic",
-            "url": "\/documentation\/mandart\/a03-challenges"
+            "url": "\/documentation\/mandart\/a01-gettingstarted"
+        },
+        "doc://MandArt/documentation/MandArt": {
+            "role": "collection",
+            "title": "MandArt",
+            "abstract": [
+                {
+                    "type": "text",
+                    "text": "Create custom art from the Mandelbrot set."
+                }
+            ],
+            "identifier": "doc:\/\/MandArt\/documentation\/MandArt",
+            "kind": "symbol",
+            "type": "topic",
+            "url": "\/documentation\/mandart"
         },
         "mandart.png": {
             "alt": "Example",
@@ -176,19 +176,19 @@
                 }
             ]
         },
-        "doc://MandArt/documentation/MandArt/A01-GettingStarted": {
+        "doc://MandArt/documentation/MandArt/A03-Challenges": {
             "role": "article",
-            "title": "Getting Started",
+            "title": "Challenges",
             "abstract": [
                 {
                     "type": "text",
-                    "text": "How to get started using MandArt to generate custom art."
+                    "text": "Working with colors presents some challenges."
                 }
             ],
-            "identifier": "doc:\/\/MandArt\/documentation\/MandArt\/A01-GettingStarted",
+            "identifier": "doc:\/\/MandArt\/documentation\/MandArt\/A03-Challenges",
             "kind": "article",
             "type": "topic",
-            "url": "\/documentation\/mandart\/a01-gettingstarted"
+            "url": "\/documentation\/mandart\/a03-challenges"
         },
         "doc://MandArt/documentation/MandArt/A04-MoreAboutTheMath": {
             "role": "article",

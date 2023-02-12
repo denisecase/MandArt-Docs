@@ -123,20 +123,6 @@
         ]
     },
     "references": {
-        "mandart_a03.png": {
-            "alt": "Example",
-            "type": "image",
-            "identifier": "mandart_a03.png",
-            "variants": [
-                {
-                    "url": "\/images\/mandart_a03.png",
-                    "traits": [
-                        "1x",
-                        "light"
-                    ]
-                }
-            ]
-        },
         "doc://MandArt/documentation/MandArt": {
             "role": "collection",
             "title": "MandArt",
@@ -150,6 +136,20 @@
             "kind": "symbol",
             "type": "topic",
             "url": "\/documentation\/mandart"
+        },
+        "mandart_a03.png": {
+            "alt": "Example",
+            "type": "image",
+            "identifier": "mandart_a03.png",
+            "variants": [
+                {
+                    "url": "\/images\/mandart_a03.png",
+                    "traits": [
+                        "1x",
+                        "light"
+                    ]
+                }
+            ]
         }
     }
 }

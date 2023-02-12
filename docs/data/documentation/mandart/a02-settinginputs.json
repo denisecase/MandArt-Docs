@@ -675,13 +675,13 @@
         ]
     },
     "references": {
-        "Picture3.png": {
-            "alt": "Fig 3",
+        "mandart_a02.png": {
+            "alt": "Example",
             "type": "image",
-            "identifier": "Picture3.png",
+            "identifier": "mandart_a02.png",
             "variants": [
                 {
-                    "url": "\/images\/Picture3.png",
+                    "url": "\/images\/mandart_a02.png",
                     "traits": [
                         "1x",
                         "light"
@@ -703,13 +703,13 @@
                 }
             ]
         },
-        "Picture5.png": {
-            "alt": "Fig 5",
+        "Picture4.png": {
+            "alt": "Fig 4",
             "type": "image",
-            "identifier": "Picture5.png",
+            "identifier": "Picture4.png",
             "variants": [
                 {
-                    "url": "\/images\/Picture5.png",
+                    "url": "\/images\/Picture4.png",
                     "traits": [
                         "1x",
                         "light"
@@ -717,13 +717,41 @@
                 }
             ]
         },
-        "mandart_a02.png": {
-            "alt": "Example",
+        "Picture2.png": {
+            "alt": "Fig 2",
             "type": "image",
-            "identifier": "mandart_a02.png",
+            "identifier": "Picture2.png",
             "variants": [
                 {
-                    "url": "\/images\/mandart_a02.png",
+                    "url": "\/images\/Picture2.png",
+                    "traits": [
+                        "1x",
+                        "light"
+                    ]
+                }
+            ]
+        },
+        "Picture6.png": {
+            "alt": "Fig 6",
+            "type": "image",
+            "identifier": "Picture6.png",
+            "variants": [
+                {
+                    "url": "\/images\/Picture6.png",
+                    "traits": [
+                        "1x",
+                        "light"
+                    ]
+                }
+            ]
+        },
+        "Picture5.png": {
+            "alt": "Fig 5",
+            "type": "image",
+            "identifier": "Picture5.png",
+            "variants": [
+                {
+                    "url": "\/images\/Picture5.png",
                     "traits": [
                         "1x",
                         "light"
@@ -745,41 +773,13 @@
             "type": "topic",
             "url": "\/documentation\/mandart"
         },
-        "Picture2.png": {
-            "alt": "Fig 2",
+        "Picture3.png": {
+            "alt": "Fig 3",
             "type": "image",
-            "identifier": "Picture2.png",
+            "identifier": "Picture3.png",
             "variants": [
                 {
-                    "url": "\/images\/Picture2.png",
-                    "traits": [
-                        "1x",
-                        "light"
-                    ]
-                }
-            ]
-        },
-        "Picture4.png": {
-            "alt": "Fig 4",
-            "type": "image",
-            "identifier": "Picture4.png",
-            "variants": [
-                {
-                    "url": "\/images\/Picture4.png",
-                    "traits": [
-                        "1x",
-                        "light"
-                    ]
-                }
-            ]
-        },
-        "Picture6.png": {
-            "alt": "Fig 6",
-            "type": "image",
-            "identifier": "Picture6.png",
-            "variants": [
-                {
-                    "url": "\/images\/Picture6.png",
+                    "url": "\/images\/Picture3.png",
                     "traits": [
                         "1x",
                         "light"
