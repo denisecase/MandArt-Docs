@@ -14,7 +14,7 @@ In Terminal, open in the root MandArt repository folder, run
 
 ```
 swift package --allow-writing-to-directory ./docs \
-    generate-documentation --target MandArt \ --output-path ./docs \
+    generate-documentation --target MandArt --output-path ./docs \
     --disable-indexing \
     --transform-for-static-hosting  \
     --emit-digest \
