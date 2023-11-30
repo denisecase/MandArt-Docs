@@ -1,1 +1,273 @@
-[{"rawIndexableTextContent":"Create custom art from the Mandelbrot set. Overview MandArt is the ultimate app for creating custom art from the Mandelbrot set. Read more in the articles below. ","kind":"symbol","title":"MandArt","headings":["Overview"],"location":{"type":"topLevelPage","reference":{"url":"doc:\/\/MandArt\/documentation\/MandArt","interfaceLanguage":"swift"}},"summary":"Create custom art from the Mandelbrot set."},{"rawIndexableTextContent":"Working with colors presents some challenges. Overview This article covers some of the challenges printing custom MandArt.  Discussion Printing Colors This app was designed to make a frameable picture. Unfortunately, printers can’t reproduce the range of colors available on the screen. So, a set of 292 colors that should print well is available by hitting Show Print Colors. The format is the same as for the screen colors, so it is obvious that many of the best colors are missing. Color Profile To get the printable colors to work, you may need to adjust your Color Profile. Open System Settings \/ Displays \/ Color Profile - and on the drop-down, select the sRGB option as shown below.  Visible Scroll Bars There’s typically a scroll bar on the right side of the input area, unless your monitor is tall enough to see all the inputs without it. If you’d like to make your scrollbar visible all the time (rather than just when working in the input area), you’ll use Mac settings again. Open System Settings \/ Appearance \/ Show Scroll Bars - and select always.  Exploration For help getting started see Getting Started. Learn about all the ways to explore custom MandArt at Setting Inputs. Read more about the math and the Mandlebrot set at More About The Math.","kind":"article","title":"Challenges","headings":["Overview","Discussion","Printing Colors","Color Profile","Visible Scroll Bars","Exploration"],"location":{"type":"topLevelPage","reference":{"url":"doc:\/\/MandArt\/documentation\/MandArt\/A03-Challenges","interfaceLanguage":"swift"}},"summary":"Working with colors presents some challenges."},{"rawIndexableTextContent":"How to get started using MandArt to generate custom art. Overview This article shows how to get started creating and saving a custom MandArt image.  Discussion Get MandArt First, you’ll want to get a copy of the MandArt App. You’ll need a Mac that runs version 12.0 (Monterey) or higher. Start MandArt Download and install the app and then open it on your machine. Welcome Screen When the app starts up, you’ll see the welcome screen. Click the Get Started button on the welcome screen to begin. Menu The menu is a pretty standard Mac menu. Use File \/ New to make a new MandArt data document or File \/ Open… to find one on your machine. Customize Inputs Customize the inputs and watch MandArt update. For more information about each input field, see Setting Inputs. Save MandArt To save your MandArt inputs, use File \/ Save on the menu or click the Save Data button in the top left. The data is stored in a document with a .mandart extension. Inputs are stored in JSON format (a simple and common data format). Warning Saving a data file is actually a bit tricky because MandArt uses SwiftUI and Apple hasn’t put in a Save As … menu item yet. Therefore, even if you rename the file and save it again, it just overwrites the original file. So, we have to work around the problem. When the file is originally saved, you get to tell it where to put the file. Since you may want to make changes and re-save the file, we have to go to the folder where the file is saved and copy or duplicate the file using a new name. MandArt doesn’t know about this new file so it can’t overwrite it. Save a Printed Image To save your generated image as a .png file, click the Save Image button in the top left. Open Saved MandArt Use File \/ Open to open a saved MandArt document. File \/ Open Recent is useful if you’ve got some previous MandArt documents from an earlier session. Share MandArt You can save and share your MandArt document files with others so they can open them in MandArt as well. Exploration Learn about all the ways to explore custom MandArt at Setting Inputs. Get help with common challenges at Challenges. Read more about the math and the Mandlebrot set at More About The Math. Have fun!","kind":"article","title":"Getting Started","headings":["Overview","Discussion","Get MandArt","Start MandArt","Welcome Screen","Menu","Customize Inputs","Save MandArt","Save a Printed Image","Open Saved MandArt","Share MandArt","Exploration"],"location":{"type":"topLevelPage","reference":{"url":"doc:\/\/MandArt\/documentation\/MandArt\/A01-GettingStarted","interfaceLanguage":"swift"}},"summary":"How to get started using MandArt to generate custom art."},{"rawIndexableTextContent":"MandArt is based on a popular fractal, the Mandlebrot set. Overview This article covers the ideas and math behind MandArt and the Mandlebrot set.  Discussion The Mandelbrot Set Now for a little math to help explain what’s going on. How are these pictures generated? We start with an iterative formula:  where z and c are complex numbers.  and  Since our computers don’t work with complex numbers, and they seem a little scary, we use a little math to get to real numbers. Then we can use the real x and y values of geometry. For each pixel location in the image, the program starts with that location and computes a new location. The new location is tested to see if it exceeds some maximum value that we choose. If it does, the program records the number of iterations required to get there. If not, it checks to see if the number of iterations has reached the maximum allowable number of iterations. If it does, it records that number and goes on to the next pixel. If not, it computes a new location. The distance from the origin to a point (x, y) is the square root of (x^2 + y^2). It has been shown that the distance from the origin must grow to infinity if that distance ever exceeds 2. Since square roots are an unnecessary and expensive calculation, we just use the distance squared, so the distance must grow to infinity if the distance squared exceeds 4. We call the distance from the origin, r, so we compute r^2 and call it rSq. We use the number of iterations to help to define a color for that location. What if we iterate many times and r^2 never exceeds the limit of 4? We call that limit rSqLimit. In general, we can’t be sure that r^2 will ever exceed 4, so we pick a large number and say that, if we don’t exceed rSqLimit in that number of iterations, we never will. We generally color that location black. We use the variable, iterationsMax, for the maximum number of iterations to try. We start out with iterationsMax = 10,000. Any time you find a black shape that doesn’t look like a Mini-Mand, it means you need to increase iterationsMax. You define the RGB colors used in the image and their order. You also define the numbers of blocks of color to be used, nBlocks. We start with six colors and 60 blocks. The colors we used are, in order: lime, yellow, red, magenta, blue, and cyan.These are six of the eight corners of the RGB color cube. The program finds the minimum number of iterations used at any location in the picture so that our coloring can start somewhere on the edge of our picture. Why would we ever choose a value for rSqLimit greater than 4? This has to do with color smoothing. We find the number of iterations required to exceed rSqLimit at each location in our image. We then assign a color to that location based on that number of iterations. However, there will be many locations nearby that have the same number of iterations. We would be left with bands of a uniform color, which may not look good. To get color smoothing, we need another piece of information. What if, instead of picking 4 as the value for rSqLimit, we picked a much higher value? We could then adjust the number of iterations by a fraction depending on how high r^2 got to in exceeding rSqLimit. We call that value of r^2 , rSqMax. We can calculate just how large rSqMax could possibly be for a given value of rSqLimit. rSqMax is simply (rSqLimit + 2)^2. We want to define a value that acts like a fractional value for the number of iterations required to exceed rSqLimit, so we defined something that acts like a differential iteration as:  and a fractional iteration as:  The program puts each value of fIter into a two-dimensional array of values covering the width and height of the image. A plot of fIter against location would show a very non-linear curve. That would not be good for smoothing out the colors, so an equation using logarithms of logarithms computes dIter from r^2 , rSqLimit, and, rSqMax. This helped to makes dIter much more linear and looks better. Then we just linearly vary the R, G, and B color components to get the desired color smoothing. The Mandelbrot set The Mandelbrot set is a mathematical formula. It is a complex function that generates a set of complex numbers based on the iteration of a simple equation. The equation is used to generate the points in the complex plane that are part of the Mandelbrot set. The set is named after the French mathematician Benoît B. Mandelbrot, who studied and popularized it in the late 20th century. All we really have to know is that i^2 = -1 and that an i in front of a number means it is measured along the y axis of the standard x-y plane. The initial value of z(n) is 0 + i0. The values of x0 and y0 remain fixed while we iterate. That’s just part of the definition of the Mandelbrot set. Exploration For help getting started see Getting Started. Learn about all the ways to explore custom MandArt at Setting Inputs. Get help with common challenges at Challenges.","kind":"article","title":"More About The Math","headings":["Overview","Discussion","The Mandelbrot Set","The Mandelbrot set","Exploration"],"location":{"type":"topLevelPage","reference":{"url":"doc:\/\/MandArt\/documentation\/MandArt\/A04-MoreAboutTheMath","interfaceLanguage":"swift"}},"summary":"MandArt is based on a popular fractal, the Mandlebrot set."},{"rawIndexableTextContent":"Setting MandArt inputs to generate custom art. Overview This article discusses each of the user-supplied inputs used to calculate MandArt.  Discussion Mand App This is an art app, not a math app. It was specifically developed to generate pictures good enough to be printed, framed, and hung. You can completely ignore the math behind it, but it would help to have an idea of what’s going on. So, we’ll put all of the math at the end. This idea had to wait for modern computers to become available since the process requires a very great number of calculations. The app is written in the Swift computer language and uses SwiftUI for the interface. Mandelbrot and Mini-Mands  The above picture shows us the region of the x-y plane where the action will take place. The black area is the major part of the Mandelbrot set, but around it is an infinite number of smaller, distorted versions of that part, which we can’t see unless we zoom in. Since we will keep referring to these objects, we’ll call the black area in the picture the Mandelbrot. The other versions of it we’ll call Mini-Mands. Welcome Screen  This picture shows the welcome screen in the app. Click on the Get Started button to begin. MandArt Main Window  This shows the main window after opening. The window isn’t big enough to show the whole picture, so resize it by drawing the lower-right corner until it shows the whole picture. Finding MandArt - Centering, Dragging, and Zooming  We’ll use this image to explain centering, dragging, and zooming. Centering If you click anywhere in the right-hand image, the program will present a new image, centered on that location. Dragging If you press and hold the mouse button, you can drag the image. It may take a few seconds to recalculate and show it in the new location. Zooming You can zoom in or out by a factor of two by hitting the + or - buttons. You can also change the magnification by changing the scale value. When you zoom in, it is like looking through a microscope. You can also think of it as expanding the image. If you zoom in as far as the 15 significant places that the Swift variable will allow, it is like moving a sheet of paper the size of your screen around in an area the size of the solar system. You should have no trouble finding a picture that no one has ever seen. In fact, if you don’t record that location, you’ll probably never be able to find your way back. Customizing MandArt A number of variables are listed in the green area. You can change any of those values and hit tab, return, or enter to use those new values. Sometime, you may have to hit return or enter twice. The screen goes blank when you start to enter certain values, because otherwise the program would update the image after each digit is entered. This is a problem that SwiftUI will solve, hopefully. These values allow you to fine-tune the image or input a set of values that you found in another reference. Coloring MandArt The next set of variables relates to coloring the image. Default values were chosen so that the initial image would be colored. To reduce the number of colors that need to be entered, the program will cycle through the defined colors as many times as necessary. The region between each pair of numbers is called a block of colors. The program will make a smooth gradient between each pair of colors. To emphasize the relatively few colors that we define over the colors the program calculates for the intermediate colors along the gradient, a slider is provided to define the fraction of a block that uses the defined color before starting the gradient. If a value near 1 is chosen, the blocks of colors will show up as solid bands. Finding Interesting Areas  This shows typical areas where you might look for interesting images. They seem to be in areas that are near where two black areas come together. Interesting Example  Here we show an image that has been moved to a new center, rotated, and zoomed in by a factor of about 2,880,000\/430 = 6,698. There are some obvious paths that seem to flow from the edge of the image into the interior. These paths can only end on the Mandelbot figure or on one of the Mini-Mands. However, the Mini-Mand may be so small that the we won’t be able to ever see it. If we keep zooming in, eventually the 15-digit significant places of a number in Swift will just start to show big blobs of color. Iterations Before Converging - Minimum The locations with the fewest iterations occur outside of the image, so the program ignores them. If we want to move the initial color in the image into our MandArt, we can enter a value for Change in minimum iteration. If we enter a negative value, we’ll get a white area in the image, indicating where that minimum value is. Maximum Iterations And Blocks of Color We typically use a large value for the maximum number of iterations and a small number for the number of blocks of color so we use an exponential relation between the two. The spacing between colors near the edges of the image, which is far from the Mini-Mand destination, is set by one variable and that near the Mini-Mand destination by another. Only trial and error and artistic preference will determine the best values. Likewise for the number of defined colors and the number of blocks of color. Checking Color Gradient between Adjacent Colors If we define only a few colors, the gradients joining a pair of adjacent colors may go through regions of color that don’t look very good. To see what a gradient between two adjacent colors looks like, input a number for the left-hand number. For example, enter 1 for the left-hand number to check the gradient between 1 and the next adjacent color (in this case, 2). The program selects the right-hand number automatically. Click Go.  After that, just enter a different number to see that gradient. Check the gradient between each set of adjacent colors. If the gradient shows a region of color you don’t like, you can change one or both colors or you can add an intermediate color. We’ll come back to finding an intermediate color after we discuss coloring. Specifying Colors The colors can be defined by inputting the (RGB) values or clicking on a color to get the Color Picker. The Color Picker has the usual Color Wheel, Color Sliders, Color Palettes, Image Palettes, and Pencils. It also has an eyedropper tool. This tool can select any color visible, in the app or not. Click the eyedropper, and then click on any color on your screen to select that color.  To get the eyedropper to work properly, you may need to adjust your Color Profile. Open System Settings \/ Displays \/ Color Profile and, on the drop-down, select the sRGB option as shown below.  Viewing Color Options In the App A selection of 512 colors that look good on the screen is available. These colors only use R, G, and B values of 0, 36, 73, 109, 146, 182, 219, and 255, but it is difficult to distinguish between adjacent colors, so they may be adequate. As mentioned, this app was designed to make a frameable picture. Unfortunately, printers can’t reproduce the range of colors available on the screen. So, a set of 292 colors that should print well is also available. The button A displays all 512 colors.  The button AP displays the 292 colors in the format of the screen colors, so it is obvious that many of the best colors are missing.  The button P shows the 292 colors, but not in the format of the screen colors. It also shows the RGB values.  The A, AP, and P colors can be shown in six different orders (Rgb, Rbg, Grb, Gbr, Brg, and Bgr), but the upper-left is always black and the lower-right is always white. The different orders just make it easier to see the color groupings. The following pictures show the A colors in Rgb and Bgr orders.   The pictures of the colors can be dismissed by clicking on the little X button at the top. Selected Colors List  The input colors can be reordered by dragging the color number or one of the three component colors up or down. An input color can be deleted by clicking on the Trash icon. An input color can be redefined by clicking on its colored button and using the Color Picker or by changing the color components. The exclamation point in a circle icon warns you that the color may not print well. It can be ignored or the color can be adjusted. Checking The Gradient Between Two Adjacent Colors Getting back to finding an intermediate color in a gradient: We’ll try an example. Make the first color for the gradient lime (0, 255, 0) and the second color magenta (255, 0, 255) and hit the Go button to draw a gradient between them. The resulting picture shows a gray area in the middle. Gray doesn’t usually look good in a picture, so you may want to change it.  Fixing an Unpleasant Intermediate Color To fix a poor intermediate color (e.g., gray). click the Add New Ccolor button. Click in its displayed colored area. Use the Color Picker Eyedropper to select a color near the middle of the gray area of the gradient. Verify the new color displays the unfortunate intermediate color. Select the new color again and use the Color Picker to find a better color. The Color Sliders work well for this. Any set of three equal components will be a shade of gray, so avoid that. When you find a color you like, exit the Color Picker and hit Return to select it. Finally, move the new color up between the two adjacent colors (in this example, the first and second colors). Now the first two gradients should look good. Recommendation Check the gradient between each two adjacent colors, including the last color (which will be adjacent to the first color in the list) to make sure the intermediate colors look good. Exploration For help getting started see Getting Started. Get help with common challenges at Challenges. Read more about the math and the Mandlebrot set at More About The Math.","kind":"article","title":"Setting Inputs","headings":["Overview","Discussion","Mand App","Mandelbrot and Mini-Mands","Welcome Screen","MandArt Main Window","Finding MandArt - Centering, Dragging, and Zooming","Centering","Dragging","Zooming","Customizing MandArt","Coloring MandArt","Finding Interesting Areas","Interesting Example","Iterations Before Converging - Minimum","Maximum Iterations And Blocks of Color","Checking Color Gradient between Adjacent Colors","Specifying Colors","Viewing Color Options In the App","Selected Colors List","Checking The Gradient Between Two Adjacent Colors","Fixing an Unpleasant Intermediate Color","Recommendation","Exploration"],"location":{"type":"topLevelPage","reference":{"url":"doc:\/\/MandArt\/documentation\/MandArt\/A02-SettingInputs","interfaceLanguage":"swift"}},"summary":"Setting MandArt inputs to generate custom art."}]
+[
+  {
+    "summary": "Inherited from Encodable.encode(to:).",
+    "location": {
+      "type": "topLevelPage",
+      "reference": {
+        "url": "doc:\/\/MandArt\/documentation\/MandArt\/SwiftUI\/Color\/encode(to:)",
+        "interfaceLanguage": "swift"
+      }
+    },
+    "headings": [],
+    "kind": "symbol",
+    "title": "encode(to:)",
+    "rawIndexableTextContent": "Inherited from Encodable.encode(to:). ",
+    "platforms": [
+      {
+        "unavailable": false,
+        "deprecated": false,
+        "beta": false,
+        "name": "macOS",
+        "introducedAt": "12.0"
+      }
+    ]
+  },
+  {
+    "kind": "article",
+    "summary": "",
+    "headings": [],
+    "location": {
+      "type": "topLevelPage",
+      "reference": {
+        "url": "doc:\/\/MandArt\/documentation\/MandArt\/SwiftUI\/Color\/Encodable-Implementations",
+        "interfaceLanguage": "swift"
+      }
+    },
+    "title": "Encodable Implementations",
+    "rawIndexableTextContent": ""
+  },
+  {
+    "title": "Getting Started",
+    "summary": "How to get started using MandArt to generate custom art.",
+    "location": {
+      "reference": {
+        "url": "doc:\/\/MandArt\/documentation\/MandArt\/A01-GettingStarted",
+        "interfaceLanguage": "swift"
+      },
+      "type": "topLevelPage"
+    },
+    "kind": "article",
+    "rawIndexableTextContent": "How to get started using MandArt to generate custom art. Overview This article shows how to get started creating and saving a custom MandArt image.  Discussion Get MandArt First, you’ll want to get a copy of the MandArt App. You’ll need a Mac that runs version 12.0 (Monterey) or higher. Start MandArt Download and install the app and then open it on your machine. Welcome Screen When the app starts up, you’ll see the welcome screen. Click the Get Started button on the welcome screen to begin. Menu The menu is a pretty standard Mac menu. Use File \/ New to make a new MandArt data document or File \/ Open… to find one on your machine. Customize Inputs Customize the inputs and watch MandArt update. For more information about each input field, see Setting Inputs. Save MandArt To save your MandArt inputs, use File \/ Save on the menu or click on Tab 4. Save and then on the Save Image Inputs button. The data is stored in a document with a .mandart extension. Inputs are stored in JSON format (a simple and common data format). Warning Saving a data file is actually a bit tricky because MandArt uses SwiftUI and Apple hasn’t put in a Save As … menu item yet. Therefore, even if you rename the file and save it again, it just overwrites the original file. So, we have to work around the problem. When the file is originally saved, you get to tell it where to put the file. Since you may want to make changes and re-save the file, we have to go to the folder where the file is saved and copy or duplicate the file using a new name. MandArt doesn’t know about this new file so it can’t overwrite it. Save a Printed Image To save your generated image as a .png file, click Tab 4. Save and then on the Save Image button. Open Saved MandArt Use File \/ Open to open a saved MandArt document. File \/ Open Recent is useful if you’ve got some previous MandArt documents from an earlier session. Share MandArt You can save and share your MandArt document files with others and they can open them in MandArt. Exploration Learn about ways to explore custom MandArt at Setting Inputs. Get help with common challenges at Challenges. Read more about the math and the Mandlebrot set at More About The Math. Have fun!",
+    "headings": [
+      "Overview",
+      "Discussion",
+      "Get MandArt",
+      "Start MandArt",
+      "Welcome Screen",
+      "Menu",
+      "Customize Inputs",
+      "Save MandArt",
+      "Save a Printed Image",
+      "Open Saved MandArt",
+      "Share MandArt",
+      "Exploration"
+    ]
+  },
+  {
+    "headings": [],
+    "title": "PngCommenter",
+    "location": {
+      "reference": {
+        "url": "doc:\/\/MandArt\/documentation\/MandArt\/PngCommenter",
+        "interfaceLanguage": "swift"
+      },
+      "type": "topLevelPage"
+    },
+    "kind": "symbol",
+    "platforms": [
+      {
+        "name": "macOS",
+        "beta": false,
+        "unavailable": false,
+        "deprecated": false,
+        "introducedAt": "12.0"
+      }
+    ],
+    "rawIndexableTextContent": " ",
+    "summary": ""
+  },
+  {
+    "location": {
+      "type": "topLevelPage",
+      "reference": {
+        "interfaceLanguage": "swift",
+        "url": "doc:\/\/MandArt\/documentation\/MandArt\/SwiftUI\/Color"
+      }
+    },
+    "kind": "symbol",
+    "summary": "Extend Color class to conform to the Codable protocol, allowing encoding to and decoding from data representations.",
+    "title": "Color",
+    "headings": [],
+    "rawIndexableTextContent": "Extend Color class to conform to the Codable protocol, allowing encoding to and decoding from data representations. "
+  },
+  {
+    "headings": [],
+    "location": {
+      "type": "topLevelPage",
+      "reference": {
+        "url": "doc:\/\/MandArt\/documentation\/MandArt\/SwiftUI\/Color\/Decodable-Implementations",
+        "interfaceLanguage": "swift"
+      }
+    },
+    "summary": "",
+    "title": "Decodable Implementations",
+    "kind": "article",
+    "rawIndexableTextContent": ""
+  },
+  {
+    "location": {
+      "type": "topLevelPage",
+      "reference": {
+        "url": "doc:\/\/MandArt\/documentation\/MandArt",
+        "interfaceLanguage": "swift"
+      }
+    },
+    "kind": "symbol",
+    "rawIndexableTextContent": "MandArt is the ultimate app for creating custom art from the Mandelbrot set. Overview Read more in the articles below. ",
+    "title": "MandArt",
+    "summary": "MandArt is the ultimate app for creating custom art from the Mandelbrot set.",
+    "headings": [
+      "Overview"
+    ]
+  },
+  {
+    "title": "SwiftUI",
+    "headings": [],
+    "summary": "",
+    "location": {
+      "type": "topLevelPage",
+      "reference": {
+        "url": "doc:\/\/MandArt\/documentation\/MandArt\/SwiftUI",
+        "interfaceLanguage": "swift"
+      }
+    },
+    "rawIndexableTextContent": "",
+    "kind": "symbol"
+  },
+  {
+    "rawIndexableTextContent": "Inherited from Decodable.init(from:). ",
+    "kind": "symbol",
+    "headings": [],
+    "summary": "Inherited from Decodable.init(from:).",
+    "platforms": [
+      {
+        "introducedAt": "12.0",
+        "unavailable": false,
+        "beta": false,
+        "deprecated": false,
+        "name": "macOS"
+      }
+    ],
+    "location": {
+      "type": "topLevelPage",
+      "reference": {
+        "url": "doc:\/\/MandArt\/documentation\/MandArt\/SwiftUI\/Color\/init(from:)",
+        "interfaceLanguage": "swift"
+      }
+    },
+    "title": "init(from:)"
+  },
+  {
+    "kind": "article",
+    "location": {
+      "reference": {
+        "interfaceLanguage": "swift",
+        "url": "doc:\/\/MandArt\/documentation\/MandArt\/A03-Challenges"
+      },
+      "type": "topLevelPage"
+    },
+    "headings": [
+      "Overview",
+      "Discussion",
+      "Printing Colors",
+      "Color Profile",
+      "Visible Scroll Bars",
+      "Exploration"
+    ],
+    "rawIndexableTextContent": "Working with colors presents some challenges. Overview This article covers some of the challenges printing custom MandArt.  Discussion Printing Colors This app was designed to make a frameable picture. Unfortunately, printers can’t reproduce the range of colors available on the screen. So, a set of 292 colors that should print well is available by hitting Show Print Colors. The format is the same as for the screen colors, so it is obvious that many of the best colors are missing. Color Profile To get the printable colors to work, you may need to adjust your Color Profile. Open System Settings \/ Displays \/ Color Profile - and on the drop-down, select the sRGB option as shown below.  Visible Scroll Bars There’s typically a scroll bar on the right side of the input area, unless your monitor is tall enough to see all the inputs without it. If you’d like to make your scrollbar visible all the time (rather than just when working in the input area), you’ll use Mac settings again. Open System Settings \/ Appearance \/ Show Scroll Bars - and select always.  Exploration For help getting started see Getting Started. Learn about all the ways to explore custom MandArt at Setting Inputs. Read more about the math and the Mandlebrot set at More About The Math.",
+    "title": "Challenges",
+    "summary": "Working with colors presents some challenges."
+  },
+  {
+    "rawIndexableTextContent": "MandArt is based on a popular fractal, the Mandlebrot set. Overview This article covers the ideas and math behind MandArt and the Mandlebrot set.  Discussion The Mandelbrot Set Now for a little math to help explain what’s going on. How are these pictures generated? We start with an iterative formula:  where z and c are complex numbers.  and  Since our computers don’t work with complex numbers, and they seem a little scary, we use a little math to get to real numbers. Then we can use the real x and y values of geometry. For each pixel location in the image, the program starts with that location and computes a new location. The new location is tested to see if it exceeds some maximum value that we choose. If it does, the program records the number of iterations required to get there. If not, it checks to see if the number of iterations has reached the maximum allowable number of iterations. If it does, it records that number and goes on to the next pixel. If not, it computes a new location. The distance from the origin to a point (x, y) is the square root of (x^2 + y^2). It has been shown that the distance from the origin must grow to infinity if that distance ever exceeds 2. Since square roots are an unnecessary and expensive calculation, we just use the distance squared, so the distance must grow to infinity if the distance squared exceeds 4. We call the distance from the origin, r, so we compute r^2 and call it rSq. We use the number of iterations to help to define a color for that location. What if we iterate many times and r^2 never exceeds the limit of 4? We call that limit rSqLimit. In general, we can’t be sure that r^2 will ever exceed 4, so we pick a large number and say that, if we don’t exceed rSqLimit in that number of iterations, we never will. We generally color that location black. We use the variable, iterationsMax, for the maximum number of iterations to try. We start out with iterationsMax = 10,000. Any time you find a black shape that doesn’t look like a Mini-Mand, it means you need to increase iterationsMax. You define the RGB colors used in the image and their order. You also define the numbers of blocks of color to be used, nBlocks. We start with six colors and 60 blocks. The colors we used are, in order: lime, yellow, red, magenta, blue, and cyan.These are six of the eight corners of the RGB color cube. The program finds the minimum number of iterations used at any location in the picture so that our coloring can start somewhere on the edge of our picture. Why would we ever choose a value for rSqLimit greater than 4? This has to do with color smoothing. We find the number of iterations required to exceed rSqLimit at each location in our image. We then assign a color to that location based on that number of iterations. However, there will be many locations nearby that have the same number of iterations. We would be left with bands of a uniform color, which may not look good. To get color smoothing, we need another piece of information. What if, instead of picking 4 as the value for rSqLimit, we picked a much higher value? We could then adjust the number of iterations by a fraction depending on how high r^2 got to in exceeding rSqLimit. We call that value of r^2 , rSqMax. We can calculate just how large rSqMax could possibly be for a given value of rSqLimit. rSqMax is simply (rSqLimit + 2)^2. We want to define a value that acts like a fractional value for the number of iterations required to exceed rSqLimit, so we defined something that acts like a differential iteration as:  and a fractional iteration as:  The program puts each value of fIter into a two-dimensional array of values covering the width and height of the image. A plot of fIter against location would show a very non-linear curve. That would not be good for smoothing out the colors, so an equation using logarithms of logarithms computes dIter from r^2 , rSqLimit, and, rSqMax. This helped to makes dIter much more linear and looks better. Then we just linearly vary the R, G, and B color components to get the desired color smoothing. The Mandelbrot set The Mandelbrot set is a mathematical formula. It is a complex function that generates a set of complex numbers based on the iteration of a simple equation. The equation is used to generate the points in the complex plane that are part of the Mandelbrot set. The set is named after the French mathematician Benoît B. Mandelbrot, who studied and popularized it in the late 20th century. All we really have to know is that i^2 = -1 and that an i in front of a number means it is measured along the y axis of the standard x-y plane. The initial value of z(n) is 0 + i0. The values of x0 and y0 remain fixed while we iterate. That’s just part of the definition of the Mandelbrot set. Exploration For help getting started see Getting Started. Learn about all the ways to explore custom MandArt at Setting Inputs. Get help with common challenges at Challenges.",
+    "summary": "MandArt is based on a popular fractal, the Mandlebrot set.",
+    "kind": "article",
+    "title": "More About The Math",
+    "location": {
+      "reference": {
+        "url": "doc:\/\/MandArt\/documentation\/MandArt\/A04-MoreAboutTheMath",
+        "interfaceLanguage": "swift"
+      },
+      "type": "topLevelPage"
+    },
+    "headings": [
+      "Overview",
+      "Discussion",
+      "The Mandelbrot Set",
+      "The Mandelbrot set",
+      "Exploration"
+    ]
+  },
+  {
+    "headings": [
+      "Overview",
+      "Discussion",
+      "Mand App",
+      "Mandelbrot and Mini-Mands",
+      "Welcome Screen",
+      "MandArt Main Window",
+      "Finding MandArt - Centering, Dragging, and Zooming",
+      "Centering",
+      "Dragging",
+      "Zooming",
+      "Customizing MandArt",
+      "Coloring MandArt",
+      "Finding Interesting Areas",
+      "Interesting Example",
+      "Iterations Before Converging - Minimum",
+      "Maximum Iterations And Blocks of Color",
+      "Checking Color Gradient between Adjacent Colors",
+      "Specifying Colors",
+      "Viewing Color Options In the App",
+      "Selected Colors List",
+      "Checking The Gradient Between Two Adjacent Colors",
+      "Fixing an Unpleasant Intermediate Color",
+      "Recommendation",
+      "Exploration"
+    ],
+    "location": {
+      "reference": {
+        "interfaceLanguage": "swift",
+        "url": "doc:\/\/MandArt\/documentation\/MandArt\/A02-SettingInputs"
+      },
+      "type": "topLevelPage"
+    },
+    "title": "Setting Inputs",
+    "kind": "article",
+    "summary": "Setting MandArt inputs to generate custom art.",
+    "rawIndexableTextContent": "Setting MandArt inputs to generate custom art. Overview This article discusses each of the user-supplied inputs used to calculate MandArt.  Discussion Mand App This is an art app, not a math app. It was specifically developed to generate pictures good enough to be printed, framed, and hung. You can completely ignore the math behind it, but it would help to have an idea of what’s going on. So, we’ll put all of the math at the end. This idea had to wait for modern computers to become available since the process requires a very great number of calculations. The app is written in the Swift computer language and uses SwiftUI for the interface. Mandelbrot and Mini-Mands  The above picture shows us the region of the x-y plane where the action will take place. The black area is the major part of the Mandelbrot set, but around it is an infinite number of smaller, distorted versions of that part, which we can’t see unless we zoom in. Since we will keep referring to these objects, we’ll call the black area in the picture the Mandelbrot. The other versions of it we’ll call Mini-Mands. Welcome Screen  This picture shows the welcome screen in the app. Click on the Get Started button to begin. MandArt Main Window  This shows the main window after opening. The window isn’t big enough to show the whole picture, so resize it by drawing the lower-right corner until it shows the whole picture. Finding MandArt - Centering, Dragging, and Zooming  We’ll use this image to explain centering, dragging, and zooming. Centering If you click anywhere in the right-hand image, the program will present a new image, centered on that location. Dragging If you press and hold the mouse button, you can drag the image. It may take a few seconds to recalculate and show it in the new location. Zooming You can zoom in or out by a factor of two by hitting the + or - buttons. You can also change the magnification by changing the scale value. When you zoom in, it is like looking through a microscope. You can also think of it as expanding the image. If you zoom in as far as the 15 significant places that the Swift variable will allow, it is like moving a sheet of paper the size of your screen around in an area the size of the solar system. You should have no trouble finding a picture that no one has ever seen. In fact, if you don’t record that location, you’ll probably never be able to find your way back. Customizing MandArt A number of variables are listed in the green area. You can change any of those values and hit tab, return, or enter to use those new values. Sometime, you may have to hit return or enter twice.  You can avoid this by entering any commas in the input instead of letting the program do it. The screen goes blank when you start to enter certain values, because otherwise the program would update the image after each digit is entered. This is a problem that SwiftUI will solve, hopefully. These values allow you to fine-tune the image or input a set of values that you found in another reference. Coloring MandArt The next set of variables relates to coloring the image. Default values were chosen so that the initial image would be colored. To reduce the number of colors that need to be entered, the program will cycle through the defined colors as many times as necessary. The region between each pair of numbers is called a block of colors. The program will make a smooth gradient between each pair of colors. To emphasize the relatively few colors that we define over the colors the program calculates for the intermediate colors along the gradient, a slider is provided to define the fraction of a block that uses the defined color before starting the gradient. If a value near 1 is chosen, the blocks of colors will show up as solid bands. Finding Interesting Areas  This shows typical areas where you might look for interesting images. They seem to be in areas that are near where two black areas come together. Interesting Example  Here we show an image that has been moved to a new center, rotated, and zoomed in by a factor of about 2,880,000\/430 = 6,698. There are some obvious paths that seem to flow from the edge of the image into the interior. These paths can only end on the Mandelbot figure or on one of the Mini-Mands. However, the Mini-Mand may be so small that the we won’t be able to ever see it. If we keep zooming in, eventually the 15-digit significant places of a number in Swift will just start to show big blobs of color. Iterations Before Converging - Minimum The locations with the fewest iterations occur outside of the image, so the program ignores them. If we want to move the initial color in the image into our MandArt, we can enter a value for Change in minimum iteration. If we enter a negative value, we’ll get a white area in the image, indicating where that minimum value is. Maximum Iterations And Blocks of Color We typically use a large value for the maximum number of iterations and a small number for the number of blocks of color so we use an exponential relation between the two. The spacing between colors near the edges of the image, which is far from the Mini-Mand destination, is set by one variable and that near the Mini-Mand destination by another. Only trial and error and artistic preference will determine the best values. Likewise for the number of defined colors and the number of blocks of color. Checking Color Gradient between Adjacent Colors If we define only a few colors, the gradients joining a pair of adjacent colors may go through regions of color that don’t look very good. To see what a gradient between two adjacent colors looks like, input a number for the left-hand number. For example, enter 1 for the left-hand number to check the gradient between 1 and the next adjacent color (in this case, 2). The program selects the right-hand number automatically. Click Go.  After that, just enter a different number to see that gradient. Check the gradient between each set of adjacent colors. If the gradient shows a region of color you don’t like, you can change one or both colors or you can add an intermediate color. We’ll come back to finding an intermediate color after we discuss coloring. Specifying Colors The colors can be defined by inputting the (RGB) values or clicking on a color to get the Color Picker. The Color Picker has the usual Color Wheel, Color Sliders, Color Palettes, Image Palettes, and Pencils. It also has an eyedropper tool. This tool can select any color visible, in the app or not. Click the eyedropper, and then click on any color on your screen to select that color.  To get the eyedropper to work properly, you may need to adjust your Color Profile. Open System Settings \/ Displays \/ Color Profile and, on the drop-down, select the sRGB option as shown below.  Viewing Color Options In the App A selection of 512 colors that look good on the screen is available. These colors only use R, G, and B values of 0, 36, 73, 109, 146, 182, 219, and 255, but it is difficult to distinguish between adjacent colors, so they may be adequate. As mentioned, this app was designed to make a frameable picture. Unfortunately, printers can’t reproduce the range of colors available on the screen. So, a set of 292 colors that should print well is also available. The button A displays all 512 colors.  The button AP displays the 292 colors in the format of the screen colors, so it is obvious that many of the best colors are missing.  The button P shows the 292 colors, but not in the format of the screen colors. It also shows the RGB values.  The A, AP, and P colors can be shown in six different orders (Rgb, Rbg, Grb, Gbr, Brg, and Bgr), but the upper-left is always black and the lower-right is always white. The different orders just make it easier to see the color groupings. The following pictures show the A colors in Rgb and Bgr orders.   The pictures of the colors can be dismissed by clicking on the little X button at the top. Selected Colors List  The input colors can be reordered by dragging the color number or one of the three component colors up or down. An input color can be deleted by clicking on the Trash icon. An input color can be redefined by clicking on its colored button and using the Color Picker or by changing the color components. The exclamation point in a circle icon warns you that the color may not print well. It can be ignored or the color can be adjusted. Checking The Gradient Between Two Adjacent Colors Getting back to finding an intermediate color in a gradient: We’ll try an example. Make the first color for the gradient lime (0, 255, 0) and the second color magenta (255, 0, 255) and hit the Go button to draw a gradient between them. The resulting picture shows a gray area in the middle. Gray doesn’t usually look good in a picture, so you may want to change it.  Fixing an Unpleasant Intermediate Color To fix a poor intermediate color (e.g., gray). click the Add New Ccolor button. Click in its displayed colored area. Use the Color Picker Eyedropper to select a color near the middle of the gray area of the gradient. Verify the new color displays the unfortunate intermediate color. Select the new color again and use the Color Picker to find a better color. The Color Sliders work well for this. Any set of three equal components will be a shade of gray, so avoid that. When you find a color you like, exit the Color Picker and hit Return to select it. Finally, move the new color up between the two adjacent colors (in this example, the first and second colors). Now the first two gradients should look good. Recommendation Check the gradient between each two adjacent colors, including the last color (which will be adjacent to the first color in the list) to make sure the intermediate colors look good. Exploration For help getting started see Getting Started. Get help with common challenges at Challenges. Read more about the math and the Mandlebrot set at More About The Math."
+  },
+  {
+    "kind": "article",
+    "summary": "Explore the application programming interfaces (API) to understand the building blocks of MandArt.",
+    "location": {
+      "type": "topLevelPage",
+      "reference": {
+        "interfaceLanguage": "swift",
+        "url": "doc:\/\/MandArt\/documentation\/MandArt\/A05-API"
+      }
+    },
+    "title": "API Reference",
+    "headings": [
+      "MandArt App",
+      "Sources \/ MandArt",
+      "Controllers",
+      "Models",
+      "Utilities",
+      "ViewModels",
+      "Views",
+      "Acknowledgements"
+    ],
+    "rawIndexableTextContent": "Explore the application programming interfaces (API) to understand the building blocks of MandArt. MandArt App doc:MandArtApp: The main entry point of the MandArt application. Sources \/ MandArt Controllers doc:WelcomeWindowController: Manages the behavior and presentation of the welcome window. Models doc:DataSaver: Handles saving of the application’s data. doc:Hue: Represents a color (hue) used in the MandArt project. doc:MandArtDocument: The main document model for MandArt. doc:MandArtError: Custom error types used in MandArt. doc:PictureDefinition: Defines the properties of a picture in MandArt. PngCommenter: Manages commenting functionality for PNG files. doc:PngSaver: Responsible for saving PNG files. Utilities doc:ArtGrid: Manages the grid layout for the art display. doc:ArtImage: Handles image processing and rendering. doc:GradientGrid: Generates gradient patterns for art. doc:GradientImage: Creates images based on gradient calculations. doc:MACommaNumberFormatter: Custom number formatter for MandArt. doc:MAFormatters: Collection of formatters used in MandArt. doc:MandMath: Mathematical utilities for MandArt calculations. ViewModels doc:ImageViewModel: Manages the image data and interactions. doc:PopupManager: Coordinates the display of popups in the application. Views doc:ContentView: The main content view of the application. doc:ContentViewPopups: Manages various pop-up components within the content view. doc:DelayedTextFieldDouble: A custom text field for handling double-precision floating-point input. doc:DelayedTextFieldInt: A custom text field for handling integer input. doc:PanelDisplay: Displays a panel or section within the application. doc:PanelUI: Handles the user interface components for panels. doc:PopupColorCube: A pop-up view that displays a 3D color cube for color selection. doc:PopupColorSlice: Manages the display of color slices in a pop-up view. doc:PopupPrintableColors: A pop-up view for displaying printable colors. doc:SliderTextView: Integrates a slider with a text field for input. doc:TabColor: View for the color tab in the application. doc:TabColorListView: Displays a list of colors in the color tab. doc:TabFind: View for the Find tab in the application. doc:TabFindImageCenter: Manages the center point settings in the Find tab. doc:TabFindImageSize: Manages image size settings in the Find tab. doc:TabFindRotateAndMore: Contains rotation and additional settings in the Find tab. doc:TabFindScale: View for managing image scale settings in the Find tab. doc:TabSave: View for the save tab in the application. doc:TabSavePopup: Manages the pop-up functionality in the save tab. doc:TabTune: View for the tune (adjustment) tab in the application. doc:TabbedView: Manages the tabbed interface of the application. doc:WelcomeHeaderView: Displays the header view in the welcome screen. doc:WelcomeMainImageView: Manages the main image view in the welcome screen. doc:WelcomeMainInformationView: Displays information on the main welcome screen. doc:WelcomeMainView: The main view of the welcome screen. doc:WelcomeView: The overall welcome screen view of the application. Acknowledgements Some of the documentation and aspects of the application were enhanced with the assistance of AI-based tools, including those developed by OpenAI, such as ChatGPT."
+  }
+]

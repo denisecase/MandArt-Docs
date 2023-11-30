@@ -1,1 +1,328 @@
-{"images":[{"alt":"Example","type":"image","identifier":"mandart.png","variants":[{"url":"\/images\/mandart.png","traits":["1x","light"]}]},{"alt":"Color Profile","type":"image","identifier":"SystemSettings-Displays-ColorProfile-sRGB.png","variants":[{"url":"\/images\/SystemSettings-Displays-ColorProfile-sRGB.png","traits":["1x","light"]}]},{"alt":"Example","type":"image","identifier":"mandart_a03.png","variants":[{"url":"\/images\/mandart_a03.png","traits":["1x","light"]}]},{"alt":"Show Scrollbars","type":"image","identifier":"SystemSettings-Appearance-Scrollbar.png","variants":[{"url":"\/images\/SystemSettings-Appearance-Scrollbar.png","traits":["1x","light"]}]},{"alt":"Example","type":"image","identifier":"mandart_a01.png","variants":[{"url":"\/images\/mandart_a01.png","traits":["1x","light"]}]},{"alt":"Example","type":"image","identifier":"mandart_a04.png","variants":[{"url":"\/images\/mandart_a04.png","traits":["1x","light"]}]},{"alt":"Rgb order","type":"image","identifier":"Rgb.png","variants":[{"url":"\/images\/Rgb.png","traits":["1x","light"]}]},{"alt":"ColorProfile","type":"image","identifier":"SystemSettings-Displays-ColorProfile-sRGB","variants":[{"url":"\/images\/SystemSettings-Displays-ColorProfile-sRGB.png","traits":["1x","light"]}]},{"alt":"Main Window after Opening","type":"image","identifier":"WindowMainOnOpening.png","variants":[{"url":"\/images\/WindowMainOnOpening.png","traits":["1x","light"]}]},{"alt":"Checking Gradient","type":"image","identifier":"CheckingGradient.png","variants":[{"url":"\/images\/CheckingGradient.png","traits":["1x","light"]}]},{"alt":"ColorPicker with Eyedropper","type":"image","identifier":"ColorPickerWithEyeDrop.png","variants":[{"url":"\/images\/ColorPickerWithEyeDrop.png","traits":["1x","light"]}]},{"alt":"Lime to magenta gradient","type":"image","identifier":"LimeToMagentaGradient.png","variants":[{"url":"\/images\/LimeToMagentaGradient.png","traits":["1x","light"]}]},{"alt":"Colors - Printable","type":"image","identifier":"Colors-Printable.png","variants":[{"url":"\/images\/Colors-Printable.png","traits":["1x","light"]}]},{"alt":"Interesting Spirals","type":"image","identifier":"FullWindowInterestingSpirals.png","variants":[{"url":"\/images\/FullWindowInterestingSpirals.png","traits":["1x","light"]}]},{"alt":"Example","type":"image","identifier":"mandart_a02.png","variants":[{"url":"\/images\/mandart_a02.png","traits":["1x","light"]}]},{"alt":"Centering, Dragging, and Zooming","type":"image","identifier":"CenteringDraggingZooming.png","variants":[{"url":"\/images\/CenteringDraggingZooming.png","traits":["1x","light"]}]},{"alt":"Mandelbrot","type":"image","identifier":"MandArtDefaultExample.png","variants":[{"url":"\/images\/MandArtDefaultExample.png","traits":["1x","light"]}]},{"alt":"Selected Colors List","type":"image","identifier":"ColorList.png","variants":[{"url":"\/images\/ColorList.png","traits":["1x","light"]}]},{"alt":"Colors - All Printable","type":"image","identifier":"Colors-AllPrintable.png","variants":[{"url":"\/images\/Colors-AllPrintable.png","traits":["1x","light"]}]},{"alt":"Bgr order","type":"image","identifier":"Brg.png","variants":[{"url":"\/images\/Brg.png","traits":["1x","light"]}]},{"alt":"Welcome Screen","type":"image","identifier":"WindowWelcome.png","variants":[{"url":"\/images\/WindowWelcome.png","traits":["1x","light"]}]},{"alt":"Finding Interesting Areas","type":"image","identifier":"FullWindowLimeSpots.png","variants":[{"url":"\/images\/FullWindowLimeSpots.png","traits":["1x","light"]}]},{"alt":"Colors - All","type":"image","identifier":"Colors-All.png","variants":[{"url":"\/images\/Colors-All.png","traits":["1x","light"]}]}],"downloads":[],"videos":[]}
+{
+  "downloads": [],
+  "images": [
+    {
+      "alt": "Example",
+      "variants": [
+        {
+          "url": "\/images\/mandart_a01.png",
+          "traits": [
+            "1x",
+            "light"
+          ]
+        }
+      ],
+      "type": "image",
+      "identifier": "mandart_a01.png"
+    },
+    {
+      "identifier": "mandart.png",
+      "type": "image",
+      "alt": "Example",
+      "variants": [
+        {
+          "url": "\/images\/mandart.png",
+          "traits": [
+            "1x",
+            "light"
+          ]
+        }
+      ]
+    },
+    {
+      "alt": "Show Scrollbars",
+      "type": "image",
+      "variants": [
+        {
+          "url": "\/images\/SystemSettings-Appearance-Scrollbar.png",
+          "traits": [
+            "1x",
+            "light"
+          ]
+        }
+      ],
+      "identifier": "SystemSettings-Appearance-Scrollbar.png"
+    },
+    {
+      "type": "image",
+      "variants": [
+        {
+          "url": "\/images\/SystemSettings-Displays-ColorProfile-sRGB.png",
+          "traits": [
+            "1x",
+            "light"
+          ]
+        }
+      ],
+      "alt": "Color Profile",
+      "identifier": "SystemSettings-Displays-ColorProfile-sRGB.png"
+    },
+    {
+      "alt": "Example",
+      "identifier": "mandart_a03.png",
+      "variants": [
+        {
+          "traits": [
+            "1x",
+            "light"
+          ],
+          "url": "\/images\/mandart_a03.png"
+        }
+      ],
+      "type": "image"
+    },
+    {
+      "variants": [
+        {
+          "url": "\/images\/mandart_a04.png",
+          "traits": [
+            "1x",
+            "light"
+          ]
+        }
+      ],
+      "alt": "Example",
+      "identifier": "mandart_a04.png",
+      "type": "image"
+    },
+    {
+      "type": "image",
+      "identifier": "LimeToMagentaGradient.png",
+      "alt": "Lime to magenta gradient",
+      "variants": [
+        {
+          "traits": [
+            "1x",
+            "light"
+          ],
+          "url": "\/images\/LimeToMagentaGradient.png"
+        }
+      ]
+    },
+    {
+      "identifier": "Rgb.png",
+      "alt": "Rgb order",
+      "type": "image",
+      "variants": [
+        {
+          "traits": [
+            "1x",
+            "light"
+          ],
+          "url": "\/images\/Rgb.png"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "variants": [
+        {
+          "traits": [
+            "1x",
+            "light"
+          ],
+          "url": "\/images\/Colors-AllPrintable.png"
+        }
+      ],
+      "identifier": "Colors-AllPrintable.png",
+      "alt": "Colors - All Printable"
+    },
+    {
+      "alt": "Main Window after Opening",
+      "variants": [
+        {
+          "url": "\/images\/WindowMainOnOpening.png",
+          "traits": [
+            "1x",
+            "light"
+          ]
+        }
+      ],
+      "type": "image",
+      "identifier": "WindowMainOnOpening.png"
+    },
+    {
+      "type": "image",
+      "alt": "Mandelbrot",
+      "variants": [
+        {
+          "traits": [
+            "1x",
+            "light"
+          ],
+          "url": "\/images\/MandArtDefaultExample.png"
+        }
+      ],
+      "identifier": "MandArtDefaultExample.png"
+    },
+    {
+      "identifier": "SystemSettings-Displays-ColorProfile-sRGB",
+      "type": "image",
+      "alt": "ColorProfile",
+      "variants": [
+        {
+          "url": "\/images\/SystemSettings-Displays-ColorProfile-sRGB.png",
+          "traits": [
+            "1x",
+            "light"
+          ]
+        }
+      ]
+    },
+    {
+      "alt": "Checking Gradient",
+      "variants": [
+        {
+          "traits": [
+            "1x",
+            "light"
+          ],
+          "url": "\/images\/CheckingGradient.png"
+        }
+      ],
+      "identifier": "CheckingGradient.png",
+      "type": "image"
+    },
+    {
+      "variants": [
+        {
+          "traits": [
+            "1x",
+            "light"
+          ],
+          "url": "\/images\/FullWindowLimeSpots.png"
+        }
+      ],
+      "alt": "Finding Interesting Areas",
+      "type": "image",
+      "identifier": "FullWindowLimeSpots.png"
+    },
+    {
+      "alt": "Bgr order",
+      "variants": [
+        {
+          "url": "\/images\/Brg.png",
+          "traits": [
+            "1x",
+            "light"
+          ]
+        }
+      ],
+      "identifier": "Brg.png",
+      "type": "image"
+    },
+    {
+      "alt": "Welcome Screen",
+      "variants": [
+        {
+          "url": "\/images\/WindowWelcome.png",
+          "traits": [
+            "1x",
+            "light"
+          ]
+        }
+      ],
+      "identifier": "WindowWelcome.png",
+      "type": "image"
+    },
+    {
+      "alt": "Selected Colors List",
+      "type": "image",
+      "variants": [
+        {
+          "traits": [
+            "1x",
+            "light"
+          ],
+          "url": "\/images\/ColorList.png"
+        }
+      ],
+      "identifier": "ColorList.png"
+    },
+    {
+      "variants": [
+        {
+          "traits": [
+            "1x",
+            "light"
+          ],
+          "url": "\/images\/ColorPickerWithEyeDrop.png"
+        }
+      ],
+      "type": "image",
+      "identifier": "ColorPickerWithEyeDrop.png",
+      "alt": "ColorPicker with Eyedropper"
+    },
+    {
+      "alt": "Example",
+      "variants": [
+        {
+          "traits": [
+            "1x",
+            "light"
+          ],
+          "url": "\/images\/mandart_a02.png"
+        }
+      ],
+      "type": "image",
+      "identifier": "mandart_a02.png"
+    },
+    {
+      "alt": "Colors - All",
+      "identifier": "Colors-All.png",
+      "type": "image",
+      "variants": [
+        {
+          "traits": [
+            "1x",
+            "light"
+          ],
+          "url": "\/images\/Colors-All.png"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "variants": [
+        {
+          "url": "\/images\/FullWindowInterestingSpirals.png",
+          "traits": [
+            "1x",
+            "light"
+          ]
+        }
+      ],
+      "alt": "Interesting Spirals",
+      "identifier": "FullWindowInterestingSpirals.png"
+    },
+    {
+      "variants": [
+        {
+          "url": "\/images\/CenteringDraggingZooming.png",
+          "traits": [
+            "1x",
+            "light"
+          ]
+        }
+      ],
+      "type": "image",
+      "alt": "Centering, Dragging, and Zooming",
+      "identifier": "CenteringDraggingZooming.png"
+    },
+    {
+      "variants": [
+        {
+          "url": "\/images\/Colors-Printable.png",
+          "traits": [
+            "1x",
+            "light"
+          ]
+        }
+      ],
+      "type": "image",
+      "alt": "Colors - Printable",
+      "identifier": "Colors-Printable.png"
+    }
+  ],
+  "videos": []
+}

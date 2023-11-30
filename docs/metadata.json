@@ -1,1 +1,9 @@
-{"bundleDisplayName":"MandArt","bundleIdentifier":"MandArt","schemaVersion":{"major":0,"minor":1,"patch":0}}
+{
+  "schemaVersion": {
+    "major": 0,
+    "minor": 1,
+    "patch": 0
+  },
+  "bundleDisplayName": "MandArt",
+  "bundleIdentifier": "MandArt"
+}
