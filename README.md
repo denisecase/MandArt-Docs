@@ -9,7 +9,7 @@ Documentation for MandArt
 
 ## Generate New MandArt Documentation
 
-To create documentatation for the MandArt-Docs repo:
+To create new documentatation:
 
 1. In this repo folder on your machine, delete the docs folder.
 
