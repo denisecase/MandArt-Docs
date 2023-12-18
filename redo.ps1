@@ -1,7 +1,28 @@
 # PowerShell Script to Update Base URL in HTML Files
 
+# XCode / MandArt / Product / Build Documentation.
+
 # Define the root directory of the MandArt-Docs
 $rootDir = "."
+
+# Delete the old documentation in this root directory docs folder
+rm -rf docs
+
+Write-Host "Old documentation docs folder deleted."
+
+# Copy the new documentation to this root directory
+# Located at /Users/denisecase/Documents/MandArt/DerivedData/MandArt/Build/Products/Debug/MandArt.doccarchive
+
+$newDocs = "/Users/denisecase/Documents/MandArt/DerivedData/MandArt/Build/Products/Debug/MandArt.doccarchive"
+cp -r $newDocs .
+
+Write-Host $newDocs "copied to" $rootDir "Renaming to docs."
+
+
+# Rename MandArt.doccarchive to docs 
+rename-item MandArt.doccarchive docs
+
+Write-Host "New documentation renamed to docs. Updating base URL and resource paths in HTML files."
 
 # Define the new base URL
 $newBaseUrl = "/MandArt-Docs/"
