@@ -60,3 +60,7 @@ Documentation hosted at:
 
 - [docs](https://denisecase.github.io/MandArt-Docs/documentation/mandart/)
 - [repo](https://github.com/denisecase/MandArt-Docs)
+
+## Fix Apple Docc Errors
+
+- add theme-settings.json in same folder as favicon.ico
