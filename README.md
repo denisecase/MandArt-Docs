@@ -7,17 +7,33 @@ Documentation for MandArt
 
 -----
 
+## Delete This Docs folder
+
+In this repo folder on your machine, delete the docs folder.
+
 ## Generate New MandArt Documentation
 
-To create new documentatation:
-
-1. In this repo folder on your machine, delete the docs folder.
+Create new documentatation:
 
 1. In the MandArt project in XCode, click Product / Build Documentation.
 
 1. When viewing the generated docs, right-click on MandArt and click "Export".
 
-1. The default name is MandArt.doccarchive, but just save it as docs in this repo.
+1. The default name is MandArt.doccarchive.
+
+## Export for Static Hosting
+
+Run in terminal in MandArt root folder
+
+```terminal
+$(xcrun --find docc) process-archive transform-for-static-hosting ./DerivedData/Build/Products/Debug/MandArt.doccarchive --output-path ./docs
+```
+
+## Move the Docs Folder
+
+Move Mandart/docs folder to MandArt-Docs/docs.
+
+## Final Adjustments
 
 1. Open PowerShell to this repo's root folder and run `.\redo.ps1`.
 
