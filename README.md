@@ -7,7 +7,12 @@ Documentation for MandArt
 
 -----
 
-## Delete This Docs folder
+## Configre Pages in GitHub (one-time)
+
+In this docs repo in GitHub, use settings to deploy with Pages.
+Hint: Settings / Pages / main / docs.
+
+## On Update, Delete This Docs folder
 
 In this repo folder on your machine, delete the docs folder.
 
@@ -26,20 +31,20 @@ Create new documentatation:
 Run in terminal in MandArt root folder
 
 ```terminal
-$(xcrun --find docc) process-archive transform-for-static-hosting ./DerivedData/Build/Products/Debug/MandArt.doccarchive --output-path ./docs
+$(xcrun --find docc) process-archive transform-for-static-hosting ./DerivedData/Build/Products/Debug/MandArt.doccarchive --output-path ./docs --hosting-base-path denisecase.github.io/MandArt-Docs/
 ```
 
 ## Move the Docs Folder
 
 Move Mandart/docs folder to MandArt-Docs/docs.
 
-## Final Adjustments
+## Open in VS Code to format
 
-Try to host your docs. Adjust until successful. Apple is not kind to developers when it comes to documentation.
+If desired, open this repo in VS Code and format the .html files.
 
-When - if - you can successfully convert either their doccarchive or their generated static site to something that runs, add/commit/push to GitHub for hosting with GitHub Pages.
+## Push to GitHub
 
-1. Git add, commit, and push new GitHub MandArt-Docs.
+Git add, commit, and push new GitHub MandArt-Docs.
 
 ```shell
 git add .
