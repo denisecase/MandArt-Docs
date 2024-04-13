@@ -5,10 +5,15 @@
 # Define the root directory of the MandArt-Docs
 $rootDir = "."
 
-# Rename MandArt.doccarchive to docs 
-rename-item MandArt.doccarchive docs
+# Rename MandArt.doccarchive to docs If it exists
+# if not show message and continue
+if (Test-Path "MandArt.doccarchive") {
+    Write-Host "Renaming MandArt.doccarchive to docs."
+    Rename-Item MandArt.doccarchive docs
+} else {
+    Write-Host "MandArt.doccarchive does not exist. Skipping renaming."
+}
 
-Write-Host "New documentation renamed to docs. Updating base URL and resource paths in HTML files."
 
 # Define the new base URL
 $newBaseUrl = "/MandArt-Docs/"
@@ -20,8 +25,11 @@ foreach ($file in $htmlFiles) {
     # Read the content of the file
     $content = Get-Content $file.FullName
 
-    # Replace the base URL and resource paths
-    $content = $content -replace 'var baseUrl = "/"', "var baseUrl = `"$newBaseUrl`""
+    # if found, notify and replace the base URL and resource paths
+    if ($content -match 'var baseUrl = "/"') {
+        Write-Host "Updating base URL and resource paths in $($file.FullName)"
+    }
+
     $content = $content -replace 'href="/', "href=`"$newBaseUrl"
     $content = $content -replace 'src="/', "src=`"$newBaseUrl"
 
