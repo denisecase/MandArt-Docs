@@ -31,7 +31,7 @@ Create new documentatation:
 Run in terminal in MandArt root folder
 
 ```terminal
-$(xcrun --find docc) process-archive transform-for-static-hosting ./DerivedData/Build/Products/Debug/MandArt.doccarchive --output-path ./docs --hosting-base-path denisecase.github.io/MandArt-Docs/
+$(xcrun --find docc) process-archive transform-for-static-hosting ./DerivedData/Build/Products/Debug/MandArt.doccarchive --output-path ./docs --hosting-base-path MandArt-Docs/
 ```
 
 ## Move the Docs Folder
