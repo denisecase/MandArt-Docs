@@ -35,7 +35,9 @@ Move Mandart/docs folder to MandArt-Docs/docs.
 
 ## Final Adjustments
 
-1. Open PowerShell to this repo's root folder and run `.\redo.ps1`.
+Try to host your docs. Adjust until successful. Apple is not kind to developers when it comes to documentation.
+
+When - if - you can successfully convert either their doccarchive or their generated static site to something that runs, add/commit/push to GitHub for hosting with GitHub Pages.
 
 1. Git add, commit, and push new GitHub MandArt-Docs.
 
